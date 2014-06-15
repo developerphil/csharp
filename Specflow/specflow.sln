@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Specflow", ".\specflow\Specflow.csproj", "{0DC71BFE-05CA-4D00-98F9-3971664648CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnotherSpecflow", ".\AnotherSpecflow\AnotherSpecflow.csproj", "{C3947DCD-BC11-404E-BCCB-EBDCF7F701F5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DC71BFE-05CA-4D00-98F9-3971664648CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DC71BFE-05CA-4D00-98F9-3971664648CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DC71BFE-05CA-4D00-98F9-3971664648CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DC71BFE-05CA-4D00-98F9-3971664648CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3947DCD-BC11-404E-BCCB-EBDCF7F701F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3947DCD-BC11-404E-BCCB-EBDCF7F701F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3947DCD-BC11-404E-BCCB-EBDCF7F701F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3947DCD-BC11-404E-BCCB-EBDCF7F701F5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
