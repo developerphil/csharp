@@ -1,0 +1,72 @@
+﻿
+
+# Expose internal types and members to friend assemblies /* Change assembly info to allow other assembly access */
+
+# throw ex; will lose the stack trace just throw; to keep the stack trace. 
+
+# Linq re-valuate pitfall if enumerate without calling .ToList() to stop revalating
+	e..g var nums = new List<int> {1,2,3,4};
+		 var q = from n in nums select new { Number = n, ExecutionTime = DateTime.Now.ToString("mm:ss:ff")} 
+
+# Use DateTime.ParseExact to stop Ambiguous parse.
+  or use ISO format date - var strDate = date.ToString("o") .net safe datetime type DateTime.Parse(strDate)
+  DateTimeStyles similar to NumberStyles e.g. DateTimeStyles.AssumeUniversal e.g. 01/12/2000
+
+# as operator null if cast not possible
+
+# exit a loop break; or continue to skip the rest of the loop
+
+# yield return when returning IEnumerable<object> (flow of code a little different e.g. lazy processing)
+
+# Alises property of a reference if conflicts on namespaces (properties of a reference)
+
+# Condition attribute [Conditional("LOG")], add symbol in project build properties 
+
+# params object[] objects when there an arbitrary number of parmaters
+
+# Use public ExampleConstructor(string a) : this(name, "b", defaultValue) to make default constructors with less parameters
+
+# @ symbol to use reserved words e.g. @abstract
+
+# struct performance override equals method to increase performance only if struct has reference types http://bit.ly/pscsequals
+
+# Useful linq sequences methods Union, Intersect, Except (Venn diagram).
+
+# SortedSet, SortedList, Sorted Dictionary.
+
+# Compression in memory to safe space.   
+
+# SystemFileWatcher .net class to watch files on the file system with number of events that can be fired.
+
+# Expando Object is a Dictionary<string, object>
+
+# <Task> to start a new thread of work.
+
+# Standards, Build meaning into code
+  To many parameters to a method probably means class (e.g. loginRequestDetails) add validation in here aswell. 
+  Avoid bool parameters 
+  Avoid regions
+  Set warning as errors project properties (Build).
+  Avoid long if's e.g. a && b && c encapsulate (IsValid)
+
+# WCF dispose of service connection for a client when service throws an exception (for info extensions wcf video) problem with .net. (wshttpBinding) 
+
+# Use .net datetime in built methods for datetime arithmetic e.g. for loop 365 leap year azure issue
+
+# Overloads compile will infer types e.g. Int16 will use Int32 overload not object, .net compiler will infer when generics are available.
+
+# Be careful of inheritance and overloads (implicit and explicit conversions) e.g. object, int32 etc
+
+# Instead of Orderby.Orderby use Orderby.Thenby, issues with removing items from list in foreach
+
+# Collection choice - Key/Value - Dictionary
+					- FIFO, LIFO - Queue/Stack
+					- High Performance, Access Contains - HashSet
+					- High Performance, Add remove from list SortedSet
+					- Most cases List
+
+# Performance of lists where, any, union, union with - difference performance where the item is in the list e.g. on average item at the start of the sorted list.
+
+# Performance useful links http://msmvps.com/blogs/kathleen, http://bit.ly/ii3xoN, http://bit.ly/12QpgxB, http://bit.ly/12xqNSf
+
+# Explicit interface implementation 

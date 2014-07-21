@@ -1,0 +1,7 @@
+*.DotSettings
+*.resharper
+*.user
+obj/
+[Bb]in/
+[Dd]ebug*/
+[Rr]elease*/

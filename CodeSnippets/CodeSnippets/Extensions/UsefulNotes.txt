@@ -1,0 +1,5 @@
+﻿# Piggyback system namespace to add your extension method e.g. system so don't need to import namespace
+
+# Extend an interface to add extra common methods to interface only one implementation without abstract class e.g. public static Method(this IInterface interface) 
+
+# Project reference only in debug/release edit project file and add condition e.g. Condition="'$(Configuration)' == 'Debug'" change reference
