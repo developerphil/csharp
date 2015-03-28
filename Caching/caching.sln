@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "caching", "caching\caching.csproj", "{564B6B7C-0F77-48A0-98DB-98EBE039D558}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Caching.Test", "Caching.Test\Caching.Test.csproj", "{ABF8CAA2-970A-46DF-B53A-EC4F5DDA12C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{753157AF-B3B6-4EE9-A2B7-E260F1EDC627}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{564B6B7C-0F77-48A0-98DB-98EBE039D558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{564B6B7C-0F77-48A0-98DB-98EBE039D558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{564B6B7C-0F77-48A0-98DB-98EBE039D558}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{564B6B7C-0F77-48A0-98DB-98EBE039D558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ABF8CAA2-970A-46DF-B53A-EC4F5DDA12C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABF8CAA2-970A-46DF-B53A-EC4F5DDA12C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABF8CAA2-970A-46DF-B53A-EC4F5DDA12C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABF8CAA2-970A-46DF-B53A-EC4F5DDA12C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{753157AF-B3B6-4EE9-A2B7-E260F1EDC627}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{753157AF-B3B6-4EE9-A2B7-E260F1EDC627}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{753157AF-B3B6-4EE9-A2B7-E260F1EDC627}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{753157AF-B3B6-4EE9-A2B7-E260F1EDC627}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

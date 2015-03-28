@@ -1,0 +1,49 @@
+.Net MemoryCache
+	- Event Model when a item is removed or update to the cache, change monitor. 
+	- Fast, only available to one application process, lost at the end of the process, limited small size.
+
+NCache Express
+	- Out of process (windows service), available to multiple applications, distributed, perfmon counters, clear cache
+	
+AppFabric Cache
+	- Out of process, available to multiple applications, distributed, High Availability, concurrency, read-through, write-through
+
+Memcached
+	- Remote Cache, centralized, available to all applications, replicated to each nodes. (Enyim .net client library, memcached manager)
+
+Azure Table Storage
+	- Remote Cache, centralized, available to all applications, replicated to each nodes. (nosql storage)
+
+Disk
+	- Large items
+
+Output Caching ASP.Net
+	- Caching attributes or set in config and apply names e.g. [OutputCache(CacheProfile="Long")]
+	- Create a custom provider to use own cache e.g. memory cache OutputCacheProvider
+
+Levels of Cache 1,2,3
+	- Level 1 - Memory
+	- Level 2 - Memcached
+	- Level 3 - Disk
+
+Browser Caches (Private)
+	- Validation - Etag header sent from the client to the server if different new version sent back etag takes precedence.
+				 - Output Cache Location ClientAndServer for caching on the client aswell on the controller.
+				 - Restful services (Web API) has to be custom e.g. ActionFilter.
+				 - Caches query string different request and only verbs GET/HEAD.
+				 - WCF custom implementation within implementation. e.g. generate etag from response but still need to do the call.
+				 - Last modified header (if-modified-since) date comparsion. (IIS uses time stamp on the file if static file)
+	- Expiration - Expires header and Cache-control header 
+				 - Controller custom action filter
+				 - WCF set on outgoing response manually.
+	- Vary		 - JSON/XML header("Accept") browser will overwrite cache if request another type e.g XML/JSON. Web proxy cache multiple accept.
+	- Cross Domain Ajax - JSONP caching custom implementation for WCF and API old version.
+						- CORS (modern browsers) Access-Control-Allow-Origin, Access-Control-Allow-Request-Method, Access-Control-Allow-Header headers. Custom implementation for WCF (behaviour) and API (ThinkTecture). (Origin in vary header)
+	- Cache Control e.g. max-age=3600 (seconds) s-maxage=1800 (shared). private, public, must-revalidate, proxy-revalidate, no-cache, no-store
+	
+Web Caching Proxy (Public)
+	- Helps cache busting for more control
+	- Squid (Open source caching proxy)
+	- File rename to cache new static file e.g. abc.1.js
+	
+	
