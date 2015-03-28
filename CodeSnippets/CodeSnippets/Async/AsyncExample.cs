@@ -53,8 +53,7 @@ namespace CodeSnippets.Async
         {
             
             var req = (HttpWebRequest) WebRequest.Create("http://www.google.com");
-            Task<WebResponse> getResponseTask = Task.Factory.FromAsync<WebResponse>(
-                req.BeginGetResponse, req.EndGetResponse, null);
+            Task<WebResponse> getResponseTask = Task.Factory.FromAsync<WebResponse>(req.BeginGetResponse, req.EndGetResponse, null);
             var response = (HttpWebResponse)await getResponseTask;
 
             var result = string.Empty;
@@ -88,7 +87,7 @@ namespace CodeSnippets.Async
 
             ae.RunAsync();
 
-            Console.WriteLine("First");
+            Console.WriteLine("This will complete first before the async tasks");
             Thread.Sleep(10000);
         }
 
@@ -99,7 +98,7 @@ namespace CodeSnippets.Async
 
             ae.RunTwoAsync();
 
-            Console.WriteLine("First");
+            Console.WriteLine("This will complete first before the async tasks");
             Thread.Sleep(10000);
         }
 
@@ -110,7 +109,7 @@ namespace CodeSnippets.Async
 
             ae.RunSync();
 
-            Console.WriteLine("First");
+            Console.WriteLine("This will complete last");
             Thread.Sleep(10000);
         }
 

@@ -69,4 +69,64 @@
 
 # Performance useful links http://msmvps.com/blogs/kathleen, http://bit.ly/ii3xoN, http://bit.ly/12QpgxB, http://bit.ly/12xqNSf
 
-# Explicit interface implementation 
+# Explicit interface implementation if two interfaces
+
+Language Internals
+
+ILDASM - Use on a .dll or .exe to view the Intermediate language which is used my the CLR (common language runtime) e.g. ildasm hello.exe, ildasm /out=hello.il hello.exe
+ILASM - Compiles IL into an exe or dll e.g. ilasm /exe hello.il
+ILSPY - Third party open source like .net reflector
+WINDBG & SOS - Windows debug, SOS debugger extension debug and find out about dll e.g. performance, set breakpoints
+NGEN - compile in to assembler language (machine instructions) on target machine instead of JIT compiler. (Quicker startup of application)
+
+.rsp - file to contain your compiler options for csc.exe (Complier).
+Compilation Targets - dumpbin.exe view information of dll, exe, winexe, appcontainerexe.
+corflags - view information about an assembly e.g. 32 or 64 bit compilation can use corflags to change the header of dll or exe so it can be used on different architectures
+
+csc.exe
+
+/o+ optimize
+/language - c# version
+/target - x64 or x86
+/references - references
+/nostdlib - excludes mscorlib.dll 
+
+Portable Library refractor - New libraries use type forward to old assemblies.
+
+Versioning of assemblies. (if public key - memory, GAC and config), if not application base assembly in application location or codebase to let application know where the config is located.
+Global assembly cache. Only install with strong name.
+Strong names sn.exe (public key)
+
+CLR (Common language runtime) - IL Validation and verfication, code access security, garbage collection, managed exception handling.
+
+PInvoke - Native Assembly - DllImport with attached function
+e.g. font smoothing (http://msdn.microsoft.com/en-gb/library/windows/desktop/ms724947%28v=vs.85%29.aspx) Enum with parameters for input to function.
+
+Error handling - Add extra properties to DllImport e.g. SetLastError=true to store last error to catch error information e.g. Marshal.GetHRForLastWin32Error(); Marshal.ThrowExeptionForHR(hr);
+
+EntryPoint - Parameter to tell the jit compiler to look for and call the different with different parameter types.
+
+.dll contains Assembly Manifest (e.g. References, version), Metadata (including IL), Resources (optional)
+
+COM components
+
+oleview to look at the types in a c++ library, tblimp to import type into manage assembly e.g. tlbimp comcomp.tlb - return dll to reference  or use visual studio to add reference
+tblimp.exe import com types
+tlbexp.exe can be used to translate CLR type info into COM type info
+regasm.exe registration of use of .net assembly.
+COM - Callable Wrappers (CCW).
+
+Defensive Coding
+
+Split into methods 
+Naming arguements e.g. not passing true/false (examplearg: true)
+Validating e.g. guard
+Overload to reduce code
+
+Reflection
+
+Slower, Safety changing the underlining code and different behaviour e.g. private fields not initialised.
+
+
+
+

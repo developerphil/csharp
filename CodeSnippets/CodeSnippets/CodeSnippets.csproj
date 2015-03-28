@@ -37,6 +37,7 @@
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
@@ -77,6 +78,7 @@
     <Compile Include="Lazy\LazyInitializationTest.cs" />
     <Compile Include="Linq\Aggregate.cs" />
     <Compile Include="Linq\Filter.cs" />
+    <Compile Include="Linq\QueryProviderExample.cs" />
     <Compile Include="Linq\Sorted.cs" />
     <Compile Include="MulticastDelegates\MulticastDelegates.cs" />
     <Compile Include="Performance\PerformanceYieldTests.cs" />
@@ -84,6 +86,9 @@
     <Compile Include="Puzzles\Division.cs" />
     <Compile Include="Puzzles\FloatingPoints.cs" />
     <Compile Include="RandomGenerator\RandomGenerator.cs" />
+    <Compile Include="Reflection\GenericFactory\GenericFactory.cs" />
+    <Compile Include="Reflection\GenericFactory\IRepository.cs" />
+    <Compile Include="Reflection\GenericFactory\TestGenericReflectionGenericFactory.cs" />
     <Compile Include="Retry\RetryTests.cs" />
     <Compile Include="Tuples\TuplesTest.cs" />
     <Compile Include="Unicode\UnicodeValidity.cs" />
