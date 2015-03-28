@@ -52,6 +52,7 @@
     <Compile Include="Performance.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="NextMatchLooping.cs" />
+    <Compile Include="RegExPatterns\Decimal.cs" />
     <Compile Include="Repeatition.cs" />
     <Compile Include="SpecialCharacters.cs" />
     <Compile Include="Wildcharacters.cs" />
