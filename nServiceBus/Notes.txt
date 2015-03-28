@@ -1,0 +1,17 @@
+Outgoing Queues
+
+If the remote server queue can not be connected to there is a message placed on the outgoing queues folder
+
+Distributed Transactions
+
+If turn on it will wrapper message handlers in DTC. For example if there is an error after a database call then database will not commit.
+
+Overriding configuration Section
+
+You can override configuration sections in code using IProvideConfiguration<Section> this could able config setting in the database.
+
+Request/Response
+
+Callback only fires on first response e.g. there could be multiple messages for a response
+
+
