@@ -1,0 +1,89 @@
+﻿SSL first few milliseconds - http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html
+
+Explaination for SSL - Module 2 - Parts 4,5
+Public/Private Key
+
+Create your own Certificates - 
+
+Creating a Root Certificate
+
+makecert.exe
+	-r				//self signed
+	-n "CN=DevRoot" //name
+	-pe				//exportable
+	-sv DevRoot.pvk	//name of private key file
+	-a sha1			//hashing algorithm
+	-len 2048		//key length
+	-b	01/21/2010	//valid from
+	-e	01/21/2030	//valid to
+	-cy authority	//certificate type
+	DevRoot.cer		//name of certificate file
+
+Creating an SSL Certificate
+
+makecert.exe 
+	-iv DevRoot.pvk			// file name of root priv key 
+	-ic DevRoot.cer			// file name of root cert
+	-n "CN=web.local"		// name
+	-pe						// mark as exportable
+	-sv web.local.pvk		// name of private key file
+	-a sha1					// hashing algorithm
+	-len 2048				// key length
+	-b 01/21/2010			// valid from
+	-e 01/21/2020			// valid to
+	-sky exchange			// certificate type
+	web.local.cer			// name of certificate file 
+	-eku 1.3.6.1.5.5.7.3.1	// extended key usage 
+
+
+CreateDevRoot.cmd -- No Password for Dev
+CreateSslCert.cmd web.local -- No Password for Dev
+
+Thinktecture.IdentityModel - https://github.com/thinktecture/Thinktecture.IdentityModel - Certificate Validation Fluent Interface
+HttpConfig - http://www.stevestechspot.com/ABetterHttpcfg.aspx
+Netsh documentation - http://msdn.microsoft.com/en-us/library/windows/desktop/cc307236(v=vs.85).aspx
+OpenSSL
+
+Validation of Certificate
+
+- Client Server
+- Stateless Server
+- Caching data - Etags header - 
+		CacheCow Server, CacheCow.Server.EntityTagStore or MongoDB - Sql Script in package, RavenDB 
+		WebApiConfig for setup
+		Weak Etags - ETag: W\"255654484564" Strong Etags = "4654864684544"
+		GET/DELETE Request - If-None-Match: "255654484564" return 304 if not matched for 
+		PUT/PATCH - If-Match: "255654484564" make change only if match returns 412 Precondition Failed if doesn't
+- Uniform Interface
+	- ID of resources - http://.../api/example/1233
+	- Same structure for POST/PUT/PATCH
+	- Self-descriptive message
+	- Links to hint to the user for next state e.g. pending - complete state or when you a entities lets you know how to create a new entity or prev/next
+
+
+Information on CORS
+
+https://msdn.microsoft.com/en-us/magazine/dn532203.aspx
+
+Enable CORS Install-Package Microsoft.AspNet.WebApi.Cors and add Attributes [EnableCors] and global config.EnableCors()
+
+Documentation
+
+Help pages - Add Comments to controllers and change properties to generate xml documentation and the help controller in areas will display the documentation
+
+Authentication - Basic, Windows, Token (Token, Refresh token), allow access third party to data
+
+Authorize Filters
+
+IHttpActionResult - Ok, NotFound, Unauthorized, BadRequest, Redirect etc.
+
+Routing Attributes
+
+Bootstrap, Bootstrap templates, Less
+
+Side Waffle - Scaffolding templates 
+Zen Coding - intellj for html visual studio
+
+Web Essentials, Browser Link  - Editing in browser, css editor and automatically in browser 
+
+SignalR

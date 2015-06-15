@@ -1,0 +1,15 @@
+﻿
+- Client Server
+- Stateless Server
+- Caching data - Etags header - 
+		CacheCow Server, CacheCow.Server.EntityTagStore or MongoDB - Sql Script in package, RavenDB 
+		WebApiConfig for setup
+		Weak Etags - ETag: W\"255654484564" Strong Etags = "4654864684544"
+		GET/DELETE Request - If-None-Match: "255654484564" return 304 if not matched for 
+		PUT/PATCH - If-Match: "255654484564" make change only if match returns 412 Precondition Failed if doesn't
+- Uniform Interface
+	- ID of resources - http://.../api/example/1233
+	- Same structure for POST/PUT/PATCH
+	- Self-descriptive message
+	- Links to hint to the user for next state e.g. pending - complete state or when you a entities lets you know how to create a new entity or prev/next
+

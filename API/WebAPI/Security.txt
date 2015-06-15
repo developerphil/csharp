@@ -1,0 +1,48 @@
+SSL first few milliseconds - http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html
+
+Explaination for SSL - Module 2 - Parts 4,5
+Public/Private Key
+
+Create your own Certificates - 
+
+Creating a Root Certificate
+
+makecert.exe
+	-r				//self signed
+	-n "CN=DevRoot" //name
+	-pe				//exportable
+	-sv DevRoot.pvk	//name of private key file
+	-a sha1			//hashing algorithm
+	-len 2048		//key length
+	-b	01/21/2010	//valid from
+	-e	01/21/2030	//valid to
+	-cy authority	//certificate type
+	DevRoot.cer		//name of certificate file
+
+Creating an SSL Certificate
+
+makecert.exe 
+	-iv DevRoot.pvk			// file name of root priv key 
+	-ic DevRoot.cer			// file name of root cert
+	-n "CN=web.local"		// name
+	-pe						// mark as exportable
+	-sv web.local.pvk		// name of private key file
+	-a sha1					// hashing algorithm
+	-len 2048				// key length
+	-b 01/21/2010			// valid from
+	-e 01/21/2020			// valid to
+	-sky exchange			// certificate type
+	web.local.cer			// name of certificate file 
+	-eku 1.3.6.1.5.5.7.3.1	// extended key usage 
+
+
+CreateDevRoot.cmd -- No Password for Dev
+CreateSslCert.cmd web.local -- No Password for Dev
+
+Thinktecture.IdentityModel - https://github.com/thinktecture/Thinktecture.IdentityModel - Certificate Validation Fluent Interface
+HttpConfig - http://www.stevestechspot.com/ABetterHttpcfg.aspx
+Netsh documentation - http://msdn.microsoft.com/en-us/library/windows/desktop/cc307236(v=vs.85).aspx
+OpenSSL
+
+Validation of Certificate
+

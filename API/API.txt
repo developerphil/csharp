@@ -1,0 +1,27 @@
+
+--HTTPS
+
+IIS - Self Signed Certificate
+
+From Scratch CertificateCreateAndValidate Folder
+
+Root Certificate - CreateDevRoot.cmd
+Create Ssl Certificate - CreateSslCert.cmd web.local
+
+Make Root Certificate Trusted - MMC Certificates Computer Account IIS access its certificates, Trusted Root Certificate Authorities, Import Root Certificate file.cer
+Import Ssl Certificate - Personal local file.pfx
+
+Multiple Ssl on IIS 8 and higher
+
+netsh - make another SSL port
+
+netsh http urlacl - open http listener port
+netsh http urlacl url=http://+:80/MyUri user=DOMAIN\user
+
+netsh http add sslcert - add certificate to port
+
+httpconfig - UI for netsh
+
+Validate Certificate - X509Chain and X509ChainPolicy
+
+SSL first few milliseconds - http://www.moserware.com/2009/06/first-few-milliseconds-of-https.html
